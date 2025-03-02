@@ -5,6 +5,7 @@ import QuizPage from './pages/QuizPage';
 import LoginPage from './pages/LoginPage';
 import './App.css';
 import SignUpPage from './pages/SignUpPage';
+import AddDataPage from './pages/AddDataPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/game" element={<GamePage />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/sign" element={<SignUpPage />} />
+        <Route path="/add-data" element={<AddDataPage />} />
       </Routes>
     </Router>
   );
