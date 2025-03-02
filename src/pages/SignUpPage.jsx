@@ -20,7 +20,7 @@ function SignUpPage() {
         }
 
         try {
-            const response = await axios.post("http://backend-production-2d2c.up.railway.app/user", {
+            const response = await axios.post("https://backend-production-2d2c.up.railway.app/user", {
                 firstName,
                 email,
                 password,
