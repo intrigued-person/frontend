@@ -125,7 +125,7 @@ function LoginPage() {
         }
 
         // Check if the credentials are admin
-        if (email === 'admin' && password === 'admin') {
+        if (email === 'admin@gmail.com' && password === 'admin') {
             navigate('/add-data');
             return;
         }
