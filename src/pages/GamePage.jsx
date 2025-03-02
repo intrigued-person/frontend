@@ -33,7 +33,7 @@ function GamePage() {
       const userId = localStorage.getItem('userId');
       if (!userId) return;
       
-      const response = await axios.get(`http://backend-production-2d2c.up.railway.app/score/get-score`, {
+      const response = await axios.get(`https://backend-production-2d2c.up.railway.app/score/get-score`, {
         params: { userId }
       });
       setUserScore(response.data);
@@ -44,7 +44,7 @@ function GamePage() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://backend-production-2d2c.up.railway.app/user/all');
+      const response = await axios.get('https://backend-production-2d2c.up.railway.app/user/all');
       // Filter out the current user
       const currentUserId = parseInt(localStorage.getItem('userId'));
       const otherUsers = response.data.filter(user => user.userId !== currentUserId);
@@ -120,7 +120,7 @@ function GamePage() {
       console.log(challengeData.challangerId);
       
       // Send challenge to the API
-      await axios.post('http://backend-production-2d2c.up.railway.app/challange', challengeData);
+      await axios.post('https://backend-production-2d2c.up.railway.app/challange', challengeData);
       
       alert(`Challenge sent to ${selectedUser.userName}!`);
       handleCloseChallengeModal();

@@ -38,7 +38,7 @@ function QuizPage() {
         setTimeUp(false);
 
         try {
-            const response = await axios.get('http://backend-production-2d2c.up.railway.app/city/generate-question');
+            const response = await axios.get('https://backend-production-2d2c.up.railway.app/city/generate-question');
             setQuestion(response.data);
             sessionStorage.setItem('id', response.data.id);
             setTimer(30); // Reset timer
@@ -59,7 +59,7 @@ function QuizPage() {
         if (!userId) return;
 
         try {
-            const response = await axios.get("http://backend-production-2d2c.up.railway.app/score/get-score", {
+            const response = await axios.get("https://backend-production-2d2c.up.railway.app/score/get-score", {
                 params: {
                     userId: userId
                 }
@@ -108,7 +108,7 @@ function QuizPage() {
     const fetchFunFact = async () => {
         const questionId = sessionStorage.getItem('id');
         try {
-            const response = await axios.get(`http://backend-production-2d2c.up.railway.app/city/fun-fact`, {
+            const response = await axios.get(`https://backend-production-2d2c.up.railway.app/city/fun-fact`, {
                 params: {
                     id: questionId
                 }
@@ -143,7 +143,7 @@ function QuizPage() {
 
             // Make API request to check the answer
             const response = await axios.post(
-                "http://backend-production-2d2c.up.railway.app/city/check-answer",
+                "https://backend-production-2d2c.up.railway.app/city/check-answer",
                 params, // Use URLSearchParams as request body
                 {
                     headers: {
@@ -168,7 +168,7 @@ function QuizPage() {
                 scoreParams.append('answer', true); // Send the value of `answer` correctly
                 scoreParams.append('userId', userId);
 
-                const scoreResponse = await axios.post("http://backend-production-2d2c.up.railway.app/score", scoreParams, {
+                const scoreResponse = await axios.post("https://backend-production-2d2c.up.railway.app/score", scoreParams, {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
