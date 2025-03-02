@@ -61,7 +61,7 @@ function LoginPage() {
         }
 
         try {
-            const response = await axios.get("http://localhost:8080/user/login", {
+            const response = await axios.get("http://backend-production-2d2c.up.railway.app/user/login", {
                 params: {
                     email: email,
                     password: password

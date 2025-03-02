@@ -2,7 +2,6 @@ import { useNavigate, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaTrophy, FaUserFriends } from 'react-icons/fa';
-
 function GamePage() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -34,7 +33,7 @@ function GamePage() {
       const userId = localStorage.getItem('userId');
       if (!userId) return;
       
-      const response = await axios.get(`http://localhost:8080/score/get-score`, {
+      const response = await axios.get(`http://backend-production-2d2c.up.railway.app/score/get-score`, {
         params: { userId }
       });
       setUserScore(response.data);
@@ -45,7 +44,7 @@ function GamePage() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/user/all');
+      const response = await axios.get('http://backend-production-2d2c.up.railway.app/user/all');
       // Filter out the current user
       const currentUserId = parseInt(localStorage.getItem('userId'));
       const otherUsers = response.data.filter(user => user.userId !== currentUserId);
@@ -121,7 +120,7 @@ function GamePage() {
       console.log(challengeData.challangerId);
       
       // Send challenge to the API
-      await axios.post('http://localhost:8080/user/challange', challengeData);
+      await axios.post('http://backend-production-2d2c.up.railway.app/challange', challengeData);
       
       alert(`Challenge sent to ${selectedUser.userName}!`);
       handleCloseChallengeModal();
