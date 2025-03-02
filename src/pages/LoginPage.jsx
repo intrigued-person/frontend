@@ -125,7 +125,7 @@ function LoginPage() {
                 </form>
 
                 <div className="signup-footer">
-                    <p>Don't have an account? <a href="/signup">Create one here</a></p>
+                    <p>Don't have an account? <a href="/sign">Create one here</a></p>
                 </div>
             </div>
         </div>
