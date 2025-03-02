@@ -50,6 +50,10 @@ function LoginPage() {
     //     }
     // };
 
+    const handleClick = () => {
+        navigate('/sign');
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
@@ -125,7 +129,9 @@ function LoginPage() {
                 </form>
 
                 <div className="signup-footer">
-                    <p>Don't have an account? <a href="/login/sign">Create one here</a></p>
+                    <p>
+                        Don't have an account? <button onClick={handleClick}>Create one here</button>
+                    </p>
                 </div>
             </div>
         </div>
